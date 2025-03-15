@@ -10,8 +10,28 @@ h1,h2,h3{line-height:1.2}
 <header>
 <h1>1uc4n3's identity</h1>
 </header>
-1uc4rn3 is my pseudonymous identity, created as both an experiment and as a precaution for writing E2EE software.
-
-More to come!
+<p>1uc4rn3 (Lucarne, French for Skylight) is my pseudonymous identity, created as both an experiment and as a precaution for writing E2EE software.</p>
+<p>The idea is to use this 'nym for developing security critical software, both to protect myself and the software/users of software I work on - the idea is that by making myself (hopefully) inaccessible to threats and coercion I'm preventing the main way software I write could be backdoored.</p>
+<p>It's also been an interesting experiement to see how easy it is to create and use a fully disconnected, new identity on the internet, and the road blocks you might run into.</p>
+<p>Without further ado, let's look at the strategy:</p>
+<h2>The Strategy</h2>
+<p>I will create and use this identity only over some sort of secure, anonymous connection - for now, Tor.</p>
+<p>I've used both Tails and the Tor Browser only to create and use these accounts.</p>
+<p>The first key, really the core of an internet identity, is an email address.</p>
+<h3>Email</h3>
+<p>My first thought for a privacy respecting email, that I could hopefully use without revealing anything about my identity, was ProtonMail.</p>
+<p>My experience with ProtonMail has been mixed, overall:</p>
+<ul>
+    <li>When I first tried to register a ProtonMail email over Tor, I got to a blank captcha page with no way to progress except link an existing email</li>
+    <li>Eventually, by accident, I was able to register a ProtonMail email on a different Tor circuit, presumably with a better IP reputation</li>
+    <li>I started trying to use the email to register for Codeberg (foreshadowing!), but as soon as I did, ProtonMail locked my account from recieving signup emails until I linked either an email, a phone number, or purchased a ProtonMail subscription</li>
+    <li>This seemed to kinda miss the point of a new email for me, and made me less a fan of ProtonMail overall. I get the concern, though. I ended up getting another email from a cool online group (which I'm currently refraining from mentioning to prevent accidentally flooding them with people just trying to use them for backup email) who gave me access to an email anonymously via mutt over ssh.</li>
+    <li>I added this second email as the recovery email for my ProtonMail, which then re-enabled the account for registering with services.</li>
+</ul>
+<h3>VCS Hosting</h3>
+<p>Now that I had a usable and pretty "normal" email address via ProtonMail, I signed up for 2 different Git hosts, namely Codeberg and GitHub.</p>
+<p>My goal was to host on Codeberg as my main and GitHub as my backup - both are commonly used, and they exist in different jursdictions, in case that becomes relevent for, say, governmental attacks on E2EE. (Hopefully not, and I'm  not planning on doing anything illegal, but there are more and more attacks on E2EE around these days, and part of the point is to be a bit paranoid and stay on the safe side).</p>
+<p>Thus, this website is hosted on both Codberg Pages and Github Pages! Future security-sensitive software will be similarly mirrored.</p>
+<p>Until next time, /1uc4rn3</p>
 </body>
 </html>
