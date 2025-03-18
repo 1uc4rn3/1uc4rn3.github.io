@@ -11,6 +11,26 @@ h1,h2,h3{line-height:1.2}
 <h1>Root-of-Trust for Web E2EE</h1>
 </header>
 
+<h2>Problem:</h2>
+
+The Web is generally considered to not have a sufficient root-of-trust for long-lived, sensitive E2EE software, specifically software where a long-lived identity key is stored.
+The reason for the weaker security of E2EE web applications, when compared to mobile or desktop applications, is that the security of a web app is solely based on the TLS connection, and the entire app can be changed every time the web page is visited or reloaded.
+On the other hand, mobile and desktop applications are generally signed either direcly by the OS vendor or by developer keys that are attested by the OS vendor, so that you know the app and any updates you receive were created by the developer, and that the developer is trusted to some degree by your OS.
+This position I first remember hearing/seeing articulated in the "Security Cryptography Whatever" podcast and referenced web article"
+<ul>
+    <li><a href="https://securitycryptographywhatever.com/2023/11/07/PQXDH-etc/">Security Cryptography Whatever: Signal's Post-Quantum PQXDH, Same-Origin Policy, E2EE in the Browser Revisited</a></li>
+    <li><a href="https://zfnd.org/so-you-want-to-build-an-end-to-end-encrypted-web-app/">So You Want to Build an End-to-End Encrypted Web App</a></li>
+</ul>
+
+On the other hand, it would be <i>really</i> useful if you could have an actually secure and trustworth root-of-trust for long-lived E2EE web apps.
+So let's see if we can do it!
+
+<h2>Possible Approaches</h2>
+
+<h3>Bookmarklet</h3>
+<h3>Browser Extension</h3>
+<h3>view-source + Service Worker</h3>
+
 More to come!
 </body>
 </html>
