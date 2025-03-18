@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <atom:link href="http://1uc4rn3.codeberg.page/feed.xml" rel="self" type="application/rss+xml" />
+    <title>1uc4rn3's website</title>
+    <link>http://1uc4rn3.codeberg.page/</link>
+    <description>1uc4rn3's experiments in Security and E2EE</description>
+    <language>en-us</language>
+    <item>
+      <title>Roots-of-Trust for Secure E2EE on the Web</title>
+      <pubDate>Mon, 18 Mar 2025 12:01:00 GMT</pubDate>
+      <link>https://1uc4rn3.codeberg.page/rot_web.html</link>
+      <guid>http://1uc4rn3.codeberg.page/item002</guid>
+      <description>Attempts to do trustworthy/secure E2EE on the Web</description>
+    </item>
+    <item>
+      <title>Pseudonymous Identity</title>
+      <pubDate>Mon, 18 Mar 2025 12:00:00 GMT</pubDate>
+      <link>https://1uc4rn3.codeberg.page/identity.html</link>
+      <guid>http://1uc4rn3.codeberg.page/item001</guid>
+      <description>Bacground on 1uc4rn3</description>
+    </item>
+  </channel>
+</rss>
