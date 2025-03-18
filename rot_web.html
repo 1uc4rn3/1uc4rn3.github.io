@@ -53,8 +53,8 @@ The Service Worker would install itself, and from then on ensure that all fetche
 Then the question becomes how to prevent the browser from updating the main page or the service worker with a new version without it being checked.
 Here I need to do experiments:
 <ul>
-    <li>Can the Service Worker be enforced by Subresource Integrity in all browsers? With a link with a preload? Firefox doesn't support subresource integrity in inport maps, which otherwise <a href=https://shopify.engineering/shipping-support-for-module-script-integrity-in-chrome-safari">sounds great</a>.</li>
-    <li>Can the static page be served by the Service Worker eforce Subresource Integrity for the new version of the Service Worker?</li>
+    <li>Can the Service Worker be enforced by Subresource Integrity in all browsers? With a link with a preload? Firefox doesn't support subresource integrity in import maps, which otherwise <a href=https://shopify.engineering/shipping-support-for-module-script-integrity-in-chrome-safari">sounds great</a>.</li>
+    <li>Can the static page be served by the Service Worker enforce Subresource Integrity for the new version of the Service Worker?</li>
     <li>Can the Service Worker <code>fetch</code> put the new Service Worker in the HTTP cache and check the Response headers to make sure that the cache is good for far into the future, and that the content matches the expected hash, and if it doesn't, delete the private data before it takes effect?</li>
 </ul>
 <b>Problems:</b>
