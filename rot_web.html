@@ -36,7 +36,7 @@ This way, the base webpage would be constant, and then it would load all of it's
 <b>Problems:</b>
 <ul>
     <li>The biggest issue is that <code>data:</code> URLs aren't considered secure contexts (<a href="https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts">MDN</a>).
-    This prevents you from using any of the platform features that are restricted to secure contexts (<a href="https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts/features_restricted_to_secure_contexts">MDN list</a>), which is unfortunatly a deal-breaker for me, as I need Service Workers in order to proxy little web apps running in my E2EE system.
+    This prevents you from using any of the platform features that are restricted to secure contexts (<a href="https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts/features_restricted_to_secure_contexts">MDN list</a>), which is unfortunatly a deal-breaker for me, as I want to support PWAs and need Service Workers in order to proxy little web apps running in my E2EE system.
     </li>
 </ul>
 <h3>Browser Extension</h3>
@@ -45,6 +45,7 @@ This way, the base webpage would be constant, and then it would load all of it's
 <ul>
     <li>The developer is dependent upon each app store for distribution to that browser's users</li>
     <li>Browser Extension stores don't have the best reputation anyway</li>
+    <li>I don't think it's possible to install a PWA from an extension? Maybe it is, but it would be very odd!</li>
 </ul>
 <h3>view-source + Service Worker</h3>
 <b>Idea:</b> Load a small webpage over TLS, tell the user to <code>view-source</code> and check that the contents match the expected contents (expected as attested to by others on blogs, Codeberg, GitHub, X, whatever).
@@ -61,7 +62,23 @@ Here I need to do experiments:
 <ul>
     <li>Checking <code>view-source</code> against an expected value is very cumbersome</li>
     <li>I need to do a lot of testing to see if this works reliably on all browsers</li>
+    <li>I've recently become sceptical that this will work:
+        <ul>
+            <li><a href="https://github.com/w3c/ServiceWorker/issues/822">gh/ServiceWorker/#882 Preventing server-forced updates</a></li>
+            <li><a href="https://github.com/w3c/ServiceWorker/issues/1680">gh/ServiceWorker/#1680 Support subresource integrity for service workers</a></li>
+        </ul>
+        The general concensus seems to be that it's too dangerous to allow Service Workers to do exactly what we need, since it would allow malicious code to gain persistance and prevent itself from being reloaded-away.
+        That is, they seem to always come down on the side of removing malicious code after website recovery instead of stronger protections against ever running malicious code after first load.
+        I suppose this threat model makes more sense for websites, though it makes less sense for long-lived E2EE apps, as commentors point out.
+        While I haven't been keeping a list of all the times it's happened here, this has been a running pattern where it feels like I've been "headed off at the pass" 5-6 times by the various HTML powers that be - coming up with a method that almost does what I want before finding a discussion where it's decided that exactly that idea is disallowed.
+        Perhaps this overarching threat model difference partially explains why.
+    </li>
 </ul>
+<h3>Compromise</h3>
+If indeed it is impossible to achive all our goals, perhaps we persue mulitple routes and let the user choose.
+We could support a PWA with all the security problems, and take some pratical mitigations like publishing over IPFS or just on Codeberg/GitHub pages, leaning on the trust of well-known entities, for those who want convenience and have a more forgiving security model.
+Then for the more paranoid, we could offer a WebExtension, or something.
+(Of course, this isn't getting into native apps, which is great for side-loading on Android, but cannot be created for iPhone without an Apple Dev account etc)
 
 More to come, especially as I do these experiments.
 <p>/1uc4rn3</p>
