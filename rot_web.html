@@ -39,6 +39,9 @@ This way, the base webpage would be constant, and then it would load all of it's
     <li>The biggest issue is that <code>data:</code> URLs aren't considered secure contexts (<a href="https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts">MDN</a>).
     This prevents you from using any of the platform features that are restricted to secure contexts (<a href="https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts/features_restricted_to_secure_contexts">MDN list</a>), which is unfortunatly a deal-breaker for me, as I want to support PWAs and need Service Workers in order to proxy little web apps running in my E2EE system.
     </li>
+    <li>An even bigger problem that has come up since I tried to experiment with it a bit more - you're locked out of even more APIs than suggested by secure contexts, including <i>any</i> storage: <a href="https://stackoverflow.com/questions/37379254/how-to-save-data-to-the-browser-with-data-url">StackOverflow "How to save data to the browser with data: URL?" (you can't)</a>.
+        This really puts the nail in the coffin for this approch, unless I can get it to bootstrap a secure iframe via a Blob from another iframe or something bizzare.
+    </li>
 </ul>
 <h3>Browser Extension</h3>
 <b>Idea:</b> Use a browser extension, which <i>does</i> count as a secure context, and we get to piggyback onto an existing app store ecosystem.
