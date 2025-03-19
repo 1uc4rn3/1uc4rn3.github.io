@@ -41,6 +41,8 @@ This way, the base webpage would be constant, and then it would load all of it's
     </li>
     <li>An even bigger problem that has come up since I tried to experiment with it a bit more - you're locked out of even more APIs than suggested by secure contexts, including <i>any</i> storage: <a href="https://stackoverflow.com/questions/37379254/how-to-save-data-to-the-browser-with-data-url">StackOverflow "How to save data to the browser with data: URL?" (you can't)</a>.
         This really puts the nail in the coffin for this approch, unless I can get it to bootstrap a secure iframe via a Blob from another iframe or something bizzare.
+        <p><b>Update:</b> I have tried using a sub-iframe to postMessage a Blob created by the secure iframe, and then the "insecure" bookmarklet creates a data URL from it and assigns it to the src of a new iframe, and have confirmed it's still considered insecure (because of where the data URL was created, I believe.)
+            Additionally, if the data URL is created in the secure iframe, the resulting URL cannot be opened by the insecure bookmarklet (even if we could overcome this, I don't think we could verify the contents, as the data URL is opaque and even re-creating a new data URL from the same Blob will be different according to MDN)</p>
     </li>
 </ul>
 <h3>Browser Extension</h3>
