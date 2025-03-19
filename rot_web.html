@@ -50,6 +50,8 @@ This way, the base webpage would be constant, and then it would load all of it's
     <li>The developer is dependent upon each app store for distribution to that browser's users</li>
     <li>Browser Extension stores don't have the best reputation anyway</li>
     <li>I don't think it's possible to install a PWA from an extension? Maybe it is, but it would be very odd!</li>
+    <li>Mobile Chrome doesn't support extensions, which eliminates a large swath of my target audience</li>
+    <li>I think creating Safari Extensions requires an Apple Developer account, which would be tough to pay for pseudoanonamously (as far as I am aware)</li>
 </ul>
 <h3>view-source + Service Worker</h3>
 <b>Idea:</b> Load a small webpage over TLS, tell the user to <code>view-source</code> and check that the contents match the expected contents (expected as attested to by others on blogs, Codeberg, GitHub, X, whatever).
